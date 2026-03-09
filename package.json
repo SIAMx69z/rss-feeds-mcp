@@ -11,7 +11,9 @@
     "dist/",
     "feeds.json",
     "README.md",
-    "LICENSE"
+    "LICENSE",
+    "PRIVACY.md",
+    "manifest.json"
   ],
   "scripts": {
     "build": "tsc",

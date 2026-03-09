@@ -68,6 +68,35 @@ npx rss-feeds-mcp
 | `fetch_from_source` | Fetch posts from a specific named source |
 | `search_blogs` | Search across all feeds by keyword (matches title and summary) |
 
+## Examples
+
+### Example 1: Add a feed and fetch latest posts
+
+**User prompt:** "Add the HubSpot blog RSS feed and show me the latest 5 posts"
+
+**Expected behavior:**
+- Calls `add_feed` with name "hubspot", URL "https://blog.hubspot.com/rss", and category "content"
+- Then calls `fetch_from_source` with name "hubspot" and limit 5
+- Returns the 5 most recent HubSpot blog posts with titles, publication dates, summaries, and links
+
+### Example 2: Search across all feeds for a topic
+
+**User prompt:** "Search all my feeds for articles about 'content marketing' from the last month"
+
+**Expected behavior:**
+- Calls `search_blogs` with keyword "content marketing" and range "30d"
+- Searches all configured feeds for articles containing "content marketing" in their title or summary
+- Returns matching articles sorted by date with title, source, publication date, and link
+
+### Example 3: Get posts from a specific category
+
+**User prompt:** "Show me the latest SEO articles from this week"
+
+**Expected behavior:**
+- Calls `fetch_by_category` with category "seo" and range "1w"
+- Fetches posts from all feeds tagged with the "seo" category
+- Returns articles from SEO-focused blogs published in the last 7 days, sorted by date
+
 ## Use Cases
 
 - **Content Research** — Find trending topics and content ideas from industry blogs
@@ -102,6 +131,12 @@ Feeds are stored at `~/.rss-mcp/feeds.json`. On first run, a default config is c
 - [Model Context Protocol](https://modelcontextprotocol.io) — The open standard for AI-tool integration
 - [Claude Desktop](https://claude.ai/download) — Anthropic's desktop AI assistant
 - [MCP Server Registry](https://github.com/punkpeye/awesome-mcp-servers) — Curated list of MCP servers
+
+## Privacy Policy
+
+See [PRIVACY.md](./PRIVACY.md) for our complete privacy policy.
+
+**TL;DR:** This extension runs locally on your machine. All feed fetching happens directly from your machine to public RSS endpoints. No data is collected, stored, or transmitted to any third party by this MCP server. No API keys or authentication required.
 
 ## License
 

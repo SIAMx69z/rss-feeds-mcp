@@ -163,11 +163,33 @@ const server = new McpServer({
   version: "2.0.0",
 });
 
+const readOnlyAnnotations = {
+  readOnlyHint: true,
+  destructiveHint: false,
+  idempotentHint: true,
+  openWorldHint: true,
+};
+
+const writeAnnotations = {
+  readOnlyHint: false,
+  destructiveHint: false,
+  idempotentHint: false,
+  openWorldHint: false,
+};
+
+const deleteAnnotations = {
+  readOnlyHint: false,
+  destructiveHint: true,
+  idempotentHint: true,
+  openWorldHint: false,
+};
+
 // List all categories
 server.tool(
   "list_categories",
   "List all available feed categories for organizing content",
   {},
+  readOnlyAnnotations,
   async () => {
     const config = loadFeeds();
     const categoryList = config.categories.map((c) => `- ${c}`).join("\n");
@@ -186,6 +208,7 @@ server.tool(
   "list_feeds",
   "List all configured RSS feeds with their categories",
   {},
+  readOnlyAnnotations,
   async () => {
     const config = loadFeeds();
 
@@ -214,6 +237,7 @@ server.tool(
     url: z.string().url().describe("RSS feed URL"),
     category: z.string().optional().describe("Category: seo, content, social, email, analytics, crm, news"),
   },
+  writeAnnotations,
   async ({ name, url, category }) => {
     const config = loadFeeds();
 
@@ -247,6 +271,7 @@ server.tool(
   {
     name: z.string().describe("Name of the feed to remove"),
   },
+  deleteAnnotations,
   async ({ name }) => {
     const config = loadFeeds();
     const initialLength = config.feeds.length;
@@ -282,6 +307,7 @@ server.tool(
       .optional()
       .describe("Maximum number of articles to return (default: 20)"),
   },
+  readOnlyAnnotations,
   async ({ range, limit }) => {
     const config = loadFeeds();
     const maxResults = limit || 20;
@@ -345,6 +371,7 @@ server.tool(
       .optional()
       .describe("Maximum number of articles to return (default: 20)"),
   },
+  readOnlyAnnotations,
   async ({ category, range, limit }) => {
     const config = loadFeeds();
     const maxResults = limit || 20;
@@ -419,6 +446,7 @@ server.tool(
       .optional()
       .describe("Maximum number of articles to return (default: 20)"),
   },
+  readOnlyAnnotations,
   async ({ name, range, limit }) => {
     const config = loadFeeds();
     const maxResults = limit || 20;
@@ -486,6 +514,7 @@ server.tool(
       .optional()
       .describe("Maximum number of articles to return (default: 20)"),
   },
+  readOnlyAnnotations,
   async ({ keyword, range, limit }) => {
     const config = loadFeeds();
     const maxResults = limit || 20;

@@ -1,0 +1,64 @@
+{
+  "manifest_version": "0.3",
+  "name": "rss-feeds-mcp",
+  "display_name": "RSS Feeds",
+  "version": "1.0.0",
+  "description": "Fetch, filter, and search RSS feeds through Claude — monitor blogs, track industry news, and research content.",
+  "author": {
+    "name": "Aashish",
+    "url": "https://github.com/lionkiii"
+  },
+  "license": "MIT",
+  "icon": "icon.png",
+  "server": {
+    "type": "node",
+    "entry_point": "dist/index.js",
+    "mcp_config": {
+      "command": "npx",
+      "args": ["-y", "rss-feeds-mcp"]
+    }
+  },
+  "tools": [
+    {
+      "name": "list_categories",
+      "description": "List all available feed categories"
+    },
+    {
+      "name": "list_feeds",
+      "description": "List all configured RSS feeds with their categories"
+    },
+    {
+      "name": "add_feed",
+      "description": "Add a new RSS feed with name, URL, and category"
+    },
+    {
+      "name": "remove_feed",
+      "description": "Remove an RSS feed by name"
+    },
+    {
+      "name": "fetch_blogs",
+      "description": "Fetch latest posts from all feeds with date range and limit"
+    },
+    {
+      "name": "fetch_by_category",
+      "description": "Fetch posts filtered by category"
+    },
+    {
+      "name": "fetch_from_source",
+      "description": "Fetch posts from a specific named source"
+    },
+    {
+      "name": "search_blogs",
+      "description": "Search across all feeds by keyword"
+    }
+  ],
+  "privacy_policies": [
+    "https://github.com/lionkiii/rss-feeds-mcp/blob/main/PRIVACY.md"
+  ],
+  "compatibility": {
+    "platforms": ["darwin", "win32", "linux"],
+    "runtimes": {
+      "node": ">=18.0.0"
+    }
+  }
+}
